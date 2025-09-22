@@ -14,5 +14,4 @@ Columnas:
 - signal: BUY/HOLD/SELL
 
 Filas: 5200 (ejemplo con 10 tickers × ~2 años)
-Licencia: (indica tu licencia preferida)
-Cómo generar: ejecutar `python generar_dataset_financiero_ia.py`
+
