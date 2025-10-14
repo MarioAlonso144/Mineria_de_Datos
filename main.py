@@ -32,7 +32,7 @@ def synthesize_for_ticker(ticker, dates, seed=None):
     return df
 
 def main():
-    # parámetros: ajusta tickers y periodos para alcanzar >= 5000 filas
+
     tickers = ['AAPL','MSFT','GOOG','AMZN','TSLA','FB','NFLX','NVDA','BTCUSD','ETHUSD']
     days_per_ticker = 520  # ~2 años hábiles
     all_dfs = []
@@ -42,7 +42,7 @@ def main():
         df_t = synthesize_for_ticker(t, dates, seed=42+i)
         all_dfs.append(df_t)
     full = pd.concat(all_dfs, ignore_index=True)
-    # mezcla las filas para evitar bloques por ticker (opcional)
+    
     full = full.sample(frac=1, random_state=1).reset_index(drop=True)
     print(f"Filas generadas: {len(full)}")
     full.to_csv('ia_financial_market_dataset.csv', index=False)
